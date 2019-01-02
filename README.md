@@ -1,4 +1,4 @@
-# myHandcraftBeads
+# My HandCraft Beads
 Une application destinée à toutes les perleuses
 
 ## Initialisation du projet avec menu slide
