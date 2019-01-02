@@ -1,6 +1,11 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+.ion-color-darkmint {
+  --ion-color-base: #488b8f;
+  --ion-color-contrast: #ffffff;
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -74,4 +79,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** global **/
+  --ion-color-lightgrey: #faf9f9;
+  --ion-color-lightmint: #add2c9;
+  --ion-color-mediummint: #5ea3a3;
+
+  --ion-color-darkmint: #488b8f;
+  --ion-color-darkmint-contrast: #ffffff;
 }
+
+
