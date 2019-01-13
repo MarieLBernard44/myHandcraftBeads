@@ -24,6 +24,23 @@ Pour ajouter des variables sass au fichier variable.scss, il faut :
   --ion-color-darkmint-contrast: #ffffff;
 ```
 
+## Personnalisation d'un bouton
+Pour personnaliser un bouton, on peut ajouter des attributs :
+- shape="round" : ajout d'un border-radius (par défaut, les bords sont carrés)
+- color="primary" : couleur du bouton
+- fill="outline" : bouton blanc avec bordure de couleur, par défaut le bouton est plein
+- size="small" : taille du bouton
+```html
+  <ion-button
+    color="mediummint"
+    fill="outline"
+    float-right
+    (click)="goToGrille()"
+  >
+    <ion-icon name="create"></ion-icon> Tissez !
+  </ion-button>
+```
+
 ## Passage des données d'une page vers une autre page
 Pour passer des données d'une page vers une autre, nous utilisons la méthode navigate du module Router afin de naviguer sur la page souhaitée:
 ```ts
