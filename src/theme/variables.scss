@@ -6,6 +6,16 @@
   --ion-color-contrast: #ffffff;
 }
 
+.ion-color-mediummint {
+  --ion-color-base: #5ea3a3;
+  --ion-color-contrast: #ffffff;
+}
+
+.ion-color-lightmint {
+  --ion-color-base: #add2c9;
+  --ion-color-contrast: #ffffff;
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -82,11 +92,13 @@
 
   /** global **/
   --ion-color-lightgrey: #faf9f9;
+
   --ion-color-lightmint: #add2c9;
+  --ion-color-lightmint-contrast: #ffffff;
+
   --ion-color-mediummint: #5ea3a3;
+  --ion-color-mediummint-contrast: #ffffff;
 
   --ion-color-darkmint: #488b8f;
   --ion-color-darkmint-contrast: #ffffff;
 }
-
-
