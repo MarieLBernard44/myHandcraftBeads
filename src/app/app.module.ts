@@ -10,15 +10,19 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { GrillePageModule } from "./grille/grille.module";
 import { GrillePage } from "./grille/grille.page";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [GrillePage],
+  exports: [FormsModule, ReactiveFormsModule],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    GrillePageModule
+    GrillePageModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

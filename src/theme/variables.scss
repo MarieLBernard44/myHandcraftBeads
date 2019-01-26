@@ -16,6 +16,11 @@
   --ion-color-contrast: #ffffff;
 }
 
+.ion-color-important {
+  --ion-color-important: #cf2b4e;
+  --ion-color-contrast: #ffffff;
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -101,4 +106,7 @@
 
   --ion-color-darkmint: #488b8f;
   --ion-color-darkmint-contrast: #ffffff;
+
+  --ion-color-important: #cf2b4e;
+  --ion-color-important-contrast: #ffffff;
 }

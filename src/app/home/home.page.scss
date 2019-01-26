@@ -3,8 +3,33 @@
   overflow: hidden;
 }
 
+ion-footer {
+  text-align: center;
+  padding: 0;
+  p {
+    color: var(--ion-color-darkmint);
+    font-size: 0.9em;
+    span {
+      color: var(--ion-color-important);
+      font-size: 1.3em;
+    }
+  }
+}
+
 ion-item {
-  margin-bottom: 20px;
+  margin-bottom: 1px;
+  &.input-ligne,
+  &.input-colonne {
+    border-bottom: 1px solid #dedede;
+  }
+}
+
+ion-card {
+  background: #fff7f9;
+  ion-icon,
+  ion-label {
+    color: var(--ion-color-important);
+  }
 }
 
 ion-list-header {
@@ -12,5 +37,10 @@ ion-list-header {
   text-transform: unset;
 }
 
+.ng-invalid:not(form) {
+  color: var(--ion-color-important);
+}
 
-
+.ng-valid:not(form) {
+  color: var(--ion-color-mediummint);
+}

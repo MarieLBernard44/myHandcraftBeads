@@ -8,62 +8,109 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-list-header>
-      Veuillez sélectionner la taille du diagramme :
-    </ion-list-header>
+  <form [formGroup]="gridForm">
+    <ion-list>
+      <ion-list-header>
+        Veuillez sélectionner la taille du diagramme :
+      </ion-list-header>
 
-    <ion-item>
-      <ion-label floating>Nombre de lignes :</ion-label>
-      <ion-input
-        type="number"
-        [(ngModel)]="ligne"
-        required="true"
-        clearInput="true"
-        min="1"
-        max="100"
-      ></ion-input>
-    </ion-item>
+      <ion-item class="input-ligne" lines="none">
+        <ion-label floating>Nombre de lignes :</ion-label>
+        <ion-input
+          type="number"
+          formControlName="ligne"
+          clearInput="true"
+        ></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Nombre de colonnes :</ion-label>
-      <ion-input
-        type="number"
-        [(ngModel)]="colonne"
-        required="true"
-        clearInput="true"
-        min="1"
-        max="100"
-      ></ion-input>
-    </ion-item>
-  </ion-list>
+      <ion-item class="input-colonne" lines="none">
+        <ion-label floating>Nombre de colonnes :</ion-label>
+        <ion-input
+          type="number"
+          formControlName="colonne"
+          clearInput="true"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
 
-  <ion-list radio-group>
-    <ion-list-header>
-      Veuillez sélectionner le type de tissage :
-    </ion-list-header>
+    <!-- <p
+      *ngIf="
+        gridForm.controls.colonne.errors && gridForm.controls.colonne.dirty
+      "
+      class="danger"
+      padding
+    >
+      Email is not valid.
+    </p> -->
 
-    <ion-item>
-      <ion-label>Loom</ion-label>
-      <ion-radio value="loom"></ion-radio>
-    </ion-item>
+    <ion-list radio-group>
+      <ion-list-header>
+        Veuillez sélectionner le type de tissage :
+      </ion-list-header>
 
-    <ion-item>
-      <ion-label>Brickstitch / Peyote </ion-label>
-      <ion-radio value="brickstitch"></ion-radio>
-    </ion-item>
-  </ion-list>
+      <ion-item lines="none">
+        <ion-label>Loom</ion-label>
+        <ion-radio value="loom"></ion-radio>
+      </ion-item>
 
-  <ion-button
-    color="mediummint"
-    fill="outline"
-    float-right
-    (click)="goToGrille()"
-  >
-    <ion-icon name="create"></ion-icon> Tissez !
-  </ion-button>
+      <ion-item lines="none">
+        <ion-label>Brickstitch / Peyote </ion-label>
+        <ion-radio value="brickstitch"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-card
+      *ngIf="
+        gridForm.controls['colonne'].hasError('max') ||
+        gridForm.controls['ligne'].hasError('max') ||
+        gridForm.controls['colonne'].hasError('min') ||
+        gridForm.controls['ligne'].hasError('min')
+      "
+    >
+      <ion-item>
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label> Erreur dans le formulaire </ion-label>
+      </ion-item>
+
+      <ion-card-content>
+        <!-- AFFICHAGE DES MESSAGES D'ERREUR DE SAISIE DU FORMULAIRE -->
+        <p
+          class="text-danger"
+          *ngIf="
+            gridForm.controls['colonne'].hasError('max') ||
+            gridForm.controls['ligne'].hasError('max')
+          "
+        >
+          {{ msgErreurMax }}
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="
+            gridForm.controls['colonne'].hasError('min') ||
+            gridForm.controls['ligne'].hasError('min')
+          "
+        >
+          {{ msgErreurMin }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button
+      color="mediummint"
+      fill="outline"
+      float-right
+      [disabled]="!gridForm.valid"
+      (click)="goToGrille()"
+    >
+      <ion-icon name="create"></ion-icon> Tissez !
+    </ion-button>
+
+    <br />
+  </form>
 </ion-content>
 
 <ion-footer padding>
-  <p>&copy; 2019 - Create with &hearts; by Marie-Louise Bernard</p>
+  <p>
+    &copy; 2019 - Create with <span> &hearts; </span> by Marie-Louise Bernard
+  </p>
 </ion-footer>
