@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="darkmint">
+    <ion-title> Confirmation </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  Attention, si vous quittez cette page vous perdrez votre diagramme.
+  Souhaitez-vous revenir au formulaire ?
+  <ion-button color="mediummint" fill="outline" href="/home">
+    Retour au formulaire
+  </ion-button>
+  <ion-button color="mediummint" fill="outline" (click)="returnGrillePage()">
+    Poursuivre ma création
+  </ion-button>
+</ion-content>

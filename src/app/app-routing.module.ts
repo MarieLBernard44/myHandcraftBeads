@@ -15,7 +15,8 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'grille', loadChildren: './grille/grille.module#GrillePageModule' }
+  { path: 'grille', loadChildren: './grille/grille.module#GrillePageModule' },
+  { path: 'modal-confirm-return', loadChildren: './modal-confirm-return/modal-confirm-return.module#ModalConfirmReturnPageModule' }
 ];
 
 @NgModule({

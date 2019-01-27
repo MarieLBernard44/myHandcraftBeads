@@ -1,6 +1,7 @@
-import { HomePage } from "./../home/home.page";
 import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
+import { ModalController } from "@ionic/angular";
+import { ModalConfirmReturnPage } from "../modal-confirm-return/modal-confirm-return.page";
 
 @Component({
   selector: "app-grille",
@@ -12,7 +13,10 @@ export class GrillePage implements OnInit {
   public ligne: number;
   public type: string;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private modalCtrl: ModalController
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -20,5 +24,13 @@ export class GrillePage implements OnInit {
       this.ligne = params["ligne"];
       this.type = params["type"];
     });
+  }
+
+  // OUVERTURE D'UNE MODALE DE CONFIRMATION DE RETOUR AU FORMULAIRE
+  async confirmReturn() {
+    const modal = await this.modalCtrl.create({
+      component: ModalConfirmReturnPage
+    });
+    return await modal.present();
   }
 }

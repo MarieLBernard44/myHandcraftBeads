@@ -1,3 +1,5 @@
+import { ModalConfirmReturnPageModule } from "./modal-confirm-return/modal-confirm-return.module";
+import { ModalConfirmReturnPage } from "./modal-confirm-return/modal-confirm-return.page";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
@@ -14,13 +16,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [GrillePage],
+  entryComponents: [GrillePage, ModalConfirmReturnPage],
   exports: [FormsModule, ReactiveFormsModule],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     GrillePageModule,
+    ModalConfirmReturnPageModule,
     FormsModule,
     ReactiveFormsModule
   ],
