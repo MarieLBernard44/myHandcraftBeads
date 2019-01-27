@@ -11,7 +11,8 @@
   <form [formGroup]="gridForm">
     <ion-list>
       <ion-list-header>
-        Veuillez sélectionner la taille du diagramme :
+        Veuillez sélectionner la taille du diagramme : <br />
+        (Taille maximum : 100 x 100)
       </ion-list-header>
 
       <ion-item class="input-ligne" lines="none">
@@ -33,30 +34,22 @@
       </ion-item>
     </ion-list>
 
-    <!-- <p
-      *ngIf="
-        gridForm.controls.colonne.errors && gridForm.controls.colonne.dirty
-      "
-      class="danger"
-      padding
-    >
-      Email is not valid.
-    </p> -->
+    <ion-list>
+      <ion-radio-group (ionChange)="typeValue($event)">
+        <ion-list-header>
+          Veuillez sélectionner le type de tissage :
+        </ion-list-header>
 
-    <ion-list radio-group>
-      <ion-list-header>
-        Veuillez sélectionner le type de tissage :
-      </ion-list-header>
+        <ion-item lines="none">
+          <ion-label>Loom</ion-label>
+          <ion-radio value="loom" formControlName="type"></ion-radio>
+        </ion-item>
 
-      <ion-item lines="none">
-        <ion-label>Loom</ion-label>
-        <ion-radio value="loom"></ion-radio>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-label>Brickstitch / Peyote </ion-label>
-        <ion-radio value="brickstitch"></ion-radio>
-      </ion-item>
+        <ion-item lines="none">
+          <ion-label>Brickstitch / Peyote </ion-label>
+          <ion-radio value="brickstitch" formControlName="type"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
     </ion-list>
 
     <ion-card

@@ -10,6 +10,7 @@ import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 export class GrillePage implements OnInit {
   public colonne: number;
   public ligne: number;
+  public type: string;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
@@ -17,6 +18,7 @@ export class GrillePage implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.colonne = params["colonne"];
       this.ligne = params["ligne"];
+      this.type = params["type"];
     });
   }
 }
